@@ -43,15 +43,17 @@ const App = () => {
       </p>
 
       <div className="content-grid">
-        {data.map((item, index) => (
-          <div key={index} className="card">
-            <p className="card-title">{item.Title}</p>
-
-            <p className="card-body">
-              <strong>Body</strong> {item.Body}
-            </p>
-          </div>
-        ))}
+        {Array.isArray(data) &&
+          data.map((item, index) => (
+            <div key={index} className="card">
+              <p className="card-title">
+                {item.title}
+              </p>
+              <p className="card-body">
+                <strong>Body</strong> {item.body}
+              </p>
+            </div>
+          ))}
       </div>
     </div>
   );
